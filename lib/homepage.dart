@@ -272,7 +272,7 @@ class _HomePageState extends State<HomePage> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(left: 10),
+                              padding: const EdgeInsets.only(left: 10.1),
                               child: SizedBox(
                                   width: 130,
                                   child: Text(bestoffers[i]["title"])),

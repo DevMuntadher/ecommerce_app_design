@@ -139,7 +139,7 @@ class _ItemsDetailsState extends State<ItemsDetails> {
               const Align(
                 alignment: Alignment.centerLeft,
                 child: Padding(
-                  padding: EdgeInsets.all(8.0),
+                  padding: EdgeInsets.all(8.1),
                   child: Text(
                     "Description",
                     style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),

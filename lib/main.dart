@@ -19,7 +19,7 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       home:const HomePage(),
       routes: {
-        "homepage":(context) => const HomePage()
+        "homepage":(context) => const HomePage(),
       },
     );
   }
