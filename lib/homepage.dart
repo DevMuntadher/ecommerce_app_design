@@ -1,4 +1,5 @@
 import 'package:ecommerce_app_design/itemsdetails.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -82,7 +83,7 @@ class _HomePageState extends State<HomePage> {
       body: Column(
         children: [
           Container(
-            height: 90,
+            height: 85,
           ),
           Row(
             children: [
@@ -117,24 +118,25 @@ class _HomePageState extends State<HomePage> {
                   style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
                 ),
               ),
-              Container(
-                width: 140,
-              ),
-              Container(
-                width: 45,
-                height: 45,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  gradient: const LinearGradient(colors: [
-                    Colors.white,
-                    Color.fromARGB(255, 217, 216, 216),
-                  ], end: Alignment.bottomLeft, begin: Alignment.topRight),
-                ),
-                alignment: Alignment.center,
-                child: IconButton(
-                  onPressed: () {},
-                  icon: const Icon(Icons.search),
-                  iconSize: 30,
+              Spacer(),
+              Padding(
+                padding: const EdgeInsets.only(right: 15),
+                child: Container(
+                  width: 45,
+                  height: 45,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    gradient: const LinearGradient(colors: [
+                      Colors.white,
+                      Color.fromARGB(255, 217, 216, 216),
+                    ], end: Alignment.bottomLeft, begin: Alignment.topRight),
+                  ),
+                  alignment: Alignment.center,
+                  child: IconButton(
+                    onPressed: () {},
+                    icon: const Icon(Icons.search),
+                    iconSize: 30,
+                  ),
                 ),
               )
             ],
@@ -226,71 +228,71 @@ class _HomePageState extends State<HomePage> {
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 )),
           ),
-          Container(
-            height: 410,
-            decoration: BoxDecoration(
-              color: Colors.grey[900],
-              borderRadius: const BorderRadius.only(
-                topRight: Radius.circular(300),
-              ),
-            ),
-            alignment: Alignment.center,
+          Expanded(
             child: Container(
               height: 410,
               decoration: BoxDecoration(
-                color: Colors.grey[350],
+                color: Colors.grey[900],
                 borderRadius: const BorderRadius.only(
-                  topLeft: Radius.circular(1000),
+                  topRight: Radius.circular(300),
                 ),
               ),
-              child: ListView.builder(
-                scrollDirection: Axis.vertical,
-                itemCount: bestoffers.length,
-                itemBuilder: (context, i) {
-                  return Card(
-                    // color: Colors.green,
-                    child: MaterialButton(
-                      onPressed: () {
-                        Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (context) => ItemsDetails(
-                              data: bestoffers[i],
-                            ),
-                          ),
-                        );
-                      },
-                      child: SizedBox(
-                        width: 400,
-                        child: Row(
-                          children: [
-                            SizedBox(
-                              width: 80,
-                              height: 80,
-                              child: Image.asset(
-                                bestoffers[i]["imagename"],
-                                width: 80,
+              alignment: Alignment.center,
+              child: Container(
+                height: 410,
+                decoration: BoxDecoration(
+                  color: Colors.grey[350],
+                  borderRadius: const BorderRadius.only(
+                    topLeft: Radius.circular(1000),
+                  ),
+                ),
+                child: ListView.builder(
+                  scrollDirection: Axis.vertical,
+                  itemCount: bestoffers.length,
+                  itemBuilder: (context, i) {
+                    return Card(
+                      // color: Colors.green,
+                      child: MaterialButton(
+                        onPressed: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => ItemsDetails(
+                                data: bestoffers[i],
                               ),
                             ),
-                            Padding(
-                              padding: const EdgeInsets.only(left: 10.1),
-                              child: SizedBox(
-                                  width: 130,
-                                  child: Text(bestoffers[i]["title"])),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(left: 80),
-                              child: Text(
+                          );
+                        },
+                        child: SizedBox(
+                          width: 400,
+                          child: Row(
+                            children: [
+                              SizedBox(
+                                width: 80,
+                                height: 80,
+                                child: Image.asset(
+                                  bestoffers[i]["imagename"],
+                                  width: 80,
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 10.1),
+                                child: SizedBox(
+                                    width: 130,
+                                    child: Text(bestoffers[i]["title"])),
+                              ),
+                              const Spacer(),
+                              Text(
                                 bestoffers[i]["price"],
                                 style: const TextStyle(
                                     color: Colors.green, fontSize: 15),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
-                    ),
-                  );
-                },
+                    );
+                  },
+                ),
               ),
             ),
           )
