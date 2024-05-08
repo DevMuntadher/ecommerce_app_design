@@ -162,8 +162,6 @@ class _ItemsDetailsState extends State<ItemsDetails> {
                       ),
                     ),
                   ),
-
-
             ),
           ),
           Expanded(child: Container()),

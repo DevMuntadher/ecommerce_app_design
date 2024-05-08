@@ -118,7 +118,7 @@ class _HomePageState extends State<HomePage> {
                   style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
                 ),
               ),
-              Spacer(),
+              const Spacer(),
               Padding(
                 padding: const EdgeInsets.only(right: 15),
                 child: Container(
